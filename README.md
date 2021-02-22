@@ -241,6 +241,9 @@ Para testar, clone e instale com os seguintes comandos:
 
 ```myProjeto$ npm instal```     ==> Instalar as depenências
 
+Após a instalação, 
+
+A figura abaixo ilustra como executar o caso de uso. Basta abrir a pasta ```node_modules``` >> ```Either``` >> ```casoDeUso.js``` 
 
 ![Usando](usandoExemplo.png)
 
