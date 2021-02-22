@@ -14,7 +14,7 @@ Resolvi, com base nestas referências (acessadas em fevereiro de 2021), criar a 
 
 Ambas as classes *Left* e *Right* usam a mesma "interface" de métodos. Para cada instância de *Left* e *Right* em execução há um comportamento diferente.
 
-Os comentário abaixo são bastante explicativos.
+Os comentários abaixo são bastante explicativos.
 
 ```javascript
 
