@@ -222,3 +222,13 @@ Note que a função ```createAluno``` não lança nehuma exceção no caso dos p
 * Ou lançar uma exceção.
 
 Desta forma, reservamos um ```try...catch``` apenas para os erros não previstos ou que não se tenha cotrole, e usamos um *Either* para mapear/modelar os erros do domínio da aplicação.
+
+---
+
+## Testando
+
+
+
+
+
+
