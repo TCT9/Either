@@ -215,7 +215,7 @@ function testeErroEmail(email){
 
 Caso algum teste falhe, será retornada uma instância de *Left* e **os testes seguintes não serão executados!**, afinal a classe Left não faz quase nada, a não ser retornar a si mesma, ou aplicar uma função ao seu ```this.value``` por meio do método ```resultFunc``` que pode ou não retornar um outro Either.
 
-Note que a função ```createAluno``` não lança nehuma exceção no caso dos parâmetros *nome* e *email* serem inválidos. Ela 'segura' a axceção para talvez um momento posterior. A função que for criar uma instância de ```Aluno``` vai decidir o que fazer:
+Note que a função ```createAluno``` não lança nehuma exceção no caso dos parâmetros *nome* e *email* serem inválidos. Ela 'segura' a exceção para talvez um momento posterior. A função que for criar uma instância de ```Aluno``` vai decidir o que fazer:
 
 * Alertar o usuário do erro;
 
