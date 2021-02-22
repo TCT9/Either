@@ -135,3 +135,81 @@ Os nomes dos métodos ```map``` e ```chain``` bem como o motivo de uso foram der
 
 Já os métodos ```isLeft```e ```result``` foram derivados dos *posts* de [VEGREVILLE](https://medium.com/inato/expressive-error-handling-in-typescript-and-benefits-for-domain-driven-design-70726e061c86) e [VOISEN](https://modernweb.com/a-gentle-introduction-to-monads-in-javascript/). Por VOISEN, ao usar o método ```Val``` (equivalente ao meu ```result```) é lançada uma exceção se a instância em execução for do tipo *Left*.
 
+
+O método ```chain``` pode ser usado para testar diversas condições de erro, em parâmetros de entrada de função ou em construtores, de modo encadeado. Exemplo:
+
+```javascript
+
+const Either = require('Either');
+
+function createAluno(nome, email){
+
+    let this.erroOuNome = new Either.Right(nome)     //supomos que o 'nome' é um valor válido
+        .chain(testeErroNome1)      //Agora encadeamos diversos testes, por meio de funções.
+        .chain(testeErroNome2);
+
+    let this.erroOuEmail = new Either.Right(email).chain(testeErroEmail);
+
+}
+
+/*
+Como esta função será usada com o método 'chain', ela DEVE retornar um Either,
+caso contrário, será lançada uma exceção.
+*/
+
+SeuErro => Uma classe que extende 'Error'
+class SeuErro extends Error {
+    constructor({message, name}){
+        super(message);
+        this.name = name;
+    }
+}
+
+SuaListaDeErros = {
+    ErroNome: {
+        ErroNomeTipo1: {name: "MeuErroNomeTipo1", message: "Erro: nome inválido - tipo 1"},
+        ErroNomeTipo2: {name: "MeuErroNomeTipo2", message: "Erro: nome inválido - tipo 2"},
+    },
+
+    ErroEmail: {
+        ErroEmaillTipo1: {name: "MeuEroEmailTipo1", message: "Erro: e-mail inválido - tipo 1"},
+    }
+}
+
+function testeErroNome1(nome){
+
+    if ( /*nome é um valor válido*/ ){
+        return this;    //por conta da chamada de fn.call(this_Either, value), este this_Either refere-se a 
+                        //ao this de quem o chamou
+    }else{
+        //Sua lista de erros personalizados pode ser criadaa aqui
+        return new Either.Left(new SeuErro(SuaListaDeErros.ErroNome.ErroNomeTipo1));
+    }
+}
+
+function testeErroNome2(nome){
+
+    if ( /*nome é um valor válido*/ ){
+        return this;    //por conta da chamada de fn.call(this_Either, value), este this_Either refere-se a 
+                        //ao this de quem o chamou
+    }else{
+        //Sua lista de erros personalizados pode ser criadaa aqui
+        return new Either.Left(new SeuErro(SuaListaDeErros.ErroNome.ErroNomeTipo2));
+    }
+}
+
+function testeErroEmail(email){
+
+    if ( /*email é um valor válido*/ ){
+        return this;    //por conta da chamada de fn.call(this_Either, value), este this_Either refere-se a 
+                        //ao this de quem o chamou
+    }else{
+        //Sua lista de erros personalizados pode ser criadaa aqui
+        return new Either.Left(new SeuErro(SuaListaDeErros.ErroEmail.ErroEmaillTipo1));
+    }
+}
+
+
+```
+
+
