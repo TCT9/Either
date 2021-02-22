@@ -157,7 +157,7 @@ Como esta função será usada com o método 'chain', ela DEVE retornar um Eithe
 caso contrário, será lançada uma exceção.
 */
 
-SeuErro => Uma classe que extende 'Error'
+//SeuErro: uma classe que extende 'Error'
 class SeuErro extends Error {
     constructor({message, name}){
         super(message);
