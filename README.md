@@ -5,7 +5,7 @@ Após muita pesquisa sobre o que é um Either ou Monad:
 2. [Handling errors with Either](https://dev.to/avalander/handling-errors-with-either-2i7j) [Autor(a) AVALANDER];
 3. [Lidando com dados inesperados em JavaScript](https://dev.to/khaosdoctor/lidando-com-dados-inesperados-em-javascript-1n2i) [Autor: SANTOS, LUCAS];
 4. [A Gentle Introduction to Monads in JavaScript](https://modernweb.com/a-gentle-introduction-to-monads-in-javascript/) [Autor: VOISEN, SEAN];
-5. [Otavio Lemos <Clean Architecture + DDD: Erros por camada e uso do Either >](https://www.youtube.com/watch?v=PXVcs5BrTSQ);
+5. [Clean Architecture + DDD: Erros por camada e uso do Either](https://www.youtube.com/watch?v=PXVcs5BrTSQ) [Autor: LEMOS, OTAVIO];
 6. [Expressive error handling in TypeScript and benefits for domain-driven design](https://medium.com/inato/expressive-error-handling-in-typescript-and-benefits-for-domain-driven-design-70726e061c86) [Autor: VEGREVILLE, BRUNO].
 
 Resolvi, com base nestas referências (acessadas em fevereiro de 2021), criar a minha própria implementação de Either, bem como um exemplo de caso de uso, em nível de 1º Semestre do curso de Análise e Desenvolvimento de Sistemas.
@@ -14,7 +14,7 @@ Resolvi, com base nestas referências (acessadas em fevereiro de 2021), criar a 
 
 Ambas as classes *Left* e *Right* usam a mesma "interface" de métodos. Para cada instância de *Left* e *Right* em execução há um comportamento diferente.
 
-Os comentário abaixo são bastante explicativos.
+Os comentários abaixo são bastante explicativos.
 
 ```javascript
 
@@ -184,7 +184,7 @@ function testeErroNome1(nome){
         return this;    //por conta da chamada de fn.call(this_Either, value), este this_Either refere-se a 
                         //ao this de quem o chamou
     }else{
-        //Sua lista de erros personalizados pode ser criadaa aqui
+        //Sua lista de erros personalizados pode ser criada aqui
         return new Either.Left(new SeuErro(SuaListaDeErros.ErroNome.ErroNomeTipo1));
     }
 }
@@ -195,7 +195,7 @@ function testeErroNome2(nome){
         return this;    //por conta da chamada de fn.call(this_Either, value), este this_Either refere-se a 
                         //ao this de quem o chamou
     }else{
-        //Sua lista de erros personalizados pode ser criadaa aqui
+        //Sua lista de erros personalizados pode ser criada aqui
         return new Either.Left(new SeuErro(SuaListaDeErros.ErroNome.ErroNomeTipo2));
     }
 }
@@ -206,7 +206,7 @@ function testeErroEmail(email){
         return this;    //por conta da chamada de fn.call(this_Either, value), este this_Either refere-se a 
                         //ao this de quem o chamou
     }else{
-        //Sua lista de erros personalizados pode ser criadaa aqui
+        //Sua lista de erros personalizados pode ser criada aqui
         return new Either.Left(new SeuErro(SuaListaDeErros.ErroEmail.ErroEmaillTipo1));
     }
 }
@@ -215,12 +215,10 @@ function testeErroEmail(email){
 
 Caso algum teste falhe, será retornada uma instância de *Left* e **os testes seguintes não serão executados!**, afinal a classe Left não faz quase nada, a não ser retornar a si mesma, ou aplicar uma função ao seu ```this.value``` por meio do método ```resultFunc``` que pode ou não retornar um outro Either.
 
-Note que a função createAluno não lança nehuma exceção no caso dos parâmetros *nome* e *email* serem inválidos. Ela 'segura' a axceção para talvez um momento posterior. A função que for criar uma instância de Aluno vai decidir o que fazer:
+Note que a função ```createAluno``` não lança nehuma exceção no caso dos parâmetros *nome* e *email* serem inválidos. Ela 'segura' a axceção para talvez um momento posterior. A função que for criar uma instância de ```Aluno``` vai decidir o que fazer:
 
 * Alertar o usuário do erro;
 
 * Ou lançar uma exceção.
 
-Desta forma, reservamos um ```try...catch``` apenas para os erros não previstos ou que não se tenha cotrole, e usamos um Either para mapear/modelar os erros do domínio da aplicação.
-
-
+Desta forma, reservamos um ```try...catch``` apenas para os erros não previstos ou que não se tenha cotrole, e usamos um *Either* para mapear/modelar os erros do domínio da aplicação.
