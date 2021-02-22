@@ -1,0 +1,23 @@
+{
+  "name": "Either",
+  "version": "1.0.0",
+  "description": "Tratamento de erros com Either",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TCT9/Either.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TCT9/Either/issues"
+  },
+  "homepage": "https://github.com/TCT9/Either#readme",
+  "dependencies": {
+    "AuxiliarJS": "github:TCT9/AuxiliarJS"
+  }
+}
