@@ -227,6 +227,7 @@ Desta forma, reservamos um ```try...catch``` apenas para os erros não previstos
 
 ## Testando
 
+![Usando](usandoExemplo.png)
 
 
 
