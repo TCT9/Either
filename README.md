@@ -243,10 +243,15 @@ Para testar, clone e instale com os seguintes comandos:
 
 Após a instalação, 
 
-A figura abaixo ilustra como executar o caso de uso. Basta abrir a pasta ```node_modules``` >> ```Either``` >> ```casoDeUso.js``` 
+A figura abaixo ilustra como executar o caso de uso. 
+
+No terminal, acesse a pasta ```node_modules``` >> ```Either```
 
 ![Usando](usandoExemplo.png)
 
+Depois execute:
+
+```myProjeto/node_modules/Either$ node casoDeUso.js```
 
 
 
