@@ -227,6 +227,15 @@ Desta forma, reservamos um ```try...catch``` apenas para os erros não previstos
 
 ## Testando
 
+Para testar, clone e instale com os seguintes comandos:
+
+```mkdir myProjeto```           ==> Crie uma pasta qualquer
+```cd myProjeto```              ==> Entre nesta pasta
+```myProjeto$```
+```myProjeto$ npm init -y```    ==> Inicialize o projeto
+```myProjeto$ npm i https://github.com/TCT9/Either.git```   ==> Instalar este repositório como um módulo
+```myProjeto$ npm instal```     ==> Instalar as depenências
+
 ![Usando](usandoExemplo.png)
 
 
