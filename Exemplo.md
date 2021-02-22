@@ -25,13 +25,13 @@ O objetivo é construir uma aplicação de terminal, constituida por um menu com
 
 1) Na __Opção 1__: _Informar o salário_
 
-> 1.1 Se o salário for menor do que 1000.00, informar: "Erro: o salário menor do 1000.00";
+> 1.1 Se o salário for menor do que 1000.00, informar: "Erro: o salário é menor do que 1000.00";
 
-> 1.2 Se o salário for maior do que 35.000,00, informar: "Erro: o salário maior do 35.000.00";
+> 1.2 Se o salário for maior do que 35.000,00, informar: "Erro: o salário é maior do que 35.000.00";
 
 > 1.3 Se o salário informado não for um número: "Erro: entre com um número válido";
 
-> 1.4 Se o salario não tiver sido registrado pela ```Opção 1```, e as opções 3 ou 5 forem selecionadas: "Erro: o salario não foi registrado na 'Opção 1' !!!".
+> 1.4 Se o salario não tiver sido registrado pela ```Opção 1```, e as opções 3 ou 5 forem selecionadas: "Erro: o salário não foi registrado na 'Opção 1' !!!".
 
 2) Na __Opção 2__: _Informar percentual de desconto (0.00 até 100.00)_
 
@@ -44,7 +44,7 @@ O objetivo é construir uma aplicação de terminal, constituida por um menu com
 
 3) Na __Opção 3__: _Imprimir o salário_
 
-> 3.1 Se o salario não tiver sido registrado pela 'Opção 1': "Erro: o salario não foi registrado na 'Opção 1' !!!";
+> 3.1 Se o salario não tiver sido registrado pela 'Opção 1': "Erro: o salário não foi registrado na 'Opção 1' !!!";
 
 > 3.2 Ao selecionar a opção 3, deve ser impresso o salário formatado. Se o salário foi 1300.5, informar: "Salário: R$ 1.300,50".
 
@@ -58,7 +58,7 @@ O objetivo é construir uma aplicação de terminal, constituida por um menu com
 
 > 5.1 Se o percentual não tiver sido registrado na 'Opção 2': "Erro: o percentual não foi registrado na 'Opção 2' !!!";
         
-> 5.2 Se o salario não tiver sido registrado pela 'Opção 1': "Erro: o salario não foi registrado na 'Opção 1' !!!";
+> 5.2 Se o salário não tiver sido registrado pela 'Opção 1': "Erro: o salário não foi registrado na 'Opção 1' !!!";
         
 > 5.3 Ao selecionar a opção 5, deve ser impresso o salário já descontado;
             
